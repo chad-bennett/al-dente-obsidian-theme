@@ -11,7 +11,7 @@
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
   --font-monospace: "courier prime code" !important;
-  --font-title:  "prompt", var(--font-family-editor);
+  --font-title: "prompt", var(--font-family-editor);
 }
 
 /* new dark theme */
@@ -76,6 +76,10 @@
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
+
+/* fix top titlebar */
+.titlebar {z-index: 1000;}
+
 /* use some other fonts for the body, too */
 body {
   font-family: var(--font-family-editor);
@@ -84,9 +88,9 @@ body {
   font-weight: 400;
 }
 
-/* here's the hack to hide unnecesasry top borders */
+/* here's the hack to hide unnecessary top borders */
 .horizontal-main-container {
-  border-top: 1px solid var(--color-back);
+  border-top: none;
   margin-top: -2px;
 }
 
