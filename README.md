@@ -13,7 +13,7 @@ my [warmth theme](https://github.com/chad-bennett/warmth-obsidian-theme) for obs
 obsidian has an updated way to install multiple themes without having to rely on the default _obsidian.css theme_ in the main folder. 
 
 to install: 
-1. download _aldente-warmthColors.css_ folder and place in your _.obsidian/themes_ folder of your repository
+1. download _aldente-warmthColors.css_ file and place in your _.obsidian/themes_ folder of your repository
 2. open obsidian and go to _Settings > Appearance_ and scroll down to _Themes_
 3. choose _aldente-warmthColors_
 4. enjoy
