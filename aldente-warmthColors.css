@@ -48,7 +48,7 @@
   --text-accent-hover: var(--color-blue-accent);
   --text-accent: var(--color-accent);
   --text-faint: rgba(150, 150, 150, 255);
-  --text-highlight-bg:#dbb9003d;
+  --text-highlight-bg: #dbb9003d;
   --text-nav-selected: var(--color-dark);
   --text-nav: var(--color-dark);
   --text-normal: var(--color-dark);
@@ -468,6 +468,7 @@ div.markdown-preview-view {
 .cm-s-obsidian pre.HyperMD-header.HyperMD-header-6 {
   font-size: inherit;
   padding-bottom: 0;
+  color: var(--color-blue-accent);
 }
 
 /* actual header paddings, preview edition */
@@ -636,9 +637,13 @@ div.markdown-preview-view {
 /* Add a tiny bit of color and padding to the link brackets and parenthesis */
 .cm-s-obsidian span.cm-formatting-link,
 .cm-s-obsidian span.cm-formatting-link-string {
-  color: var(--color-accent);
+  color: var(--color-blue-accent);
   padding: 0 1px 0 1px;
   /* font-weight: 500; */
+}
+
+.cm-s-obsidian span.cm-formatting {
+  color: var(--color-blue-accent) !important;
 }
 
 /* Set background of code panes to pure white since main background is off-white */
@@ -852,6 +857,7 @@ input[type="text"] {
 .cm-s-obsidian .cm-header,
 .cm-s-obsidian .cm-strong {
   font-weight: 700;
+  color: var(--color-blue-accent);
 }
 
 .cm-s-obsidian .cm-header {
@@ -1138,7 +1144,7 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr:after {
   position: absolute;
   height: 1px;
   width: 100%;
-  background: var(--text-selection);
+  background: var(--color-blue-accent-faded);
   left: 0;
   top: 50%;
 }
