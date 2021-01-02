@@ -381,7 +381,7 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
   border-bottom-color: var(--color-accent) !important;
   border-width: 1px !important;
   border-top: 1px solid var(--color-off);
-  background: var(--color-gray-light);
+  background: var(--color-light);
 }
 
 .workspace-leaf.mod-active .view-header-title-container:after {
@@ -1170,4 +1170,9 @@ span.cm-formatting-list-ul:before {
 .active.svelte-xik4h1.svelte-xik4h1,
 .active.today.svelte-xik4h1.svelte-xik4h1 {
   background-color: var(--color-accent-faded);
+}
+
+/* andy mode sliding panels tweaks */
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.15);
 }
