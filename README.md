@@ -4,9 +4,9 @@ a simple minimal theme for [the obsidian notes app](https://obsidian.md/) that i
 
 ---
 
-## theme variation update 2020.01.02
+## theme variation update 2020.01.03
 
-
+![screenshot 2020.01.03](https://chad-bennett.github.io/al-dente-obsidian-theme/aldente-screenshot.png)
 
 my [warmth theme](https://github.com/chad-bennett/warmth-obsidian-theme) for obsidian is part of the community themes. a lot of people are using it even though it needs a lot of updating and refining. i pulled some of the colors from the warmth theme into al-dente. it has become my main driver. i hope you like it too.
 
