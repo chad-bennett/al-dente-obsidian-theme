@@ -299,7 +299,8 @@ body {
 .side-dock-ribbon-action:hover,
 .view-header-icon:hover,
 .nav-action-button:hover,
-.nav-action-button.is-active {
+.nav-action-button.is-active,
+.view-action:hover, .view-action.is-active {
   color: var(--color-blue);
 }
 
@@ -1172,7 +1173,27 @@ span.cm-formatting-list-ul:before {
   background-color: var(--color-accent-faded);
 }
 
-/* andy mode sliding panels tweaks */
+/* andy mode sliding panels tweaks and side panel shadows */
 body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
-  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2),
+    0px 0px 4px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.2),
+    0px 0px 16px rgba(0, 0, 0, 0.2) !important;
+}
+.app-container.is-left-sidedock-collapsed .workspace-split.mod-left-split {
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.05), 2px 0px 2px rgba(0, 0, 0, 0.05),
+    4px 0px 4px rgba(0, 0, 0, 0.05), 8px 0px 8px rgba(0, 0, 0, 0.05),
+    16px 0px 16px rgba(0, 0, 0, 0.05) !important;
+  z-index: 50;
+  border-right: 0.5px solid #888;
+}
+.workspace-leaf-resize-handle {
+  border-right: 0px solid var(--color-off);
+}
+
+.app-container.is-right-sidedock-collapsed .workspace-split.mod-right-split {
+  box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.05), -2px 0px 2px rgba(0, 0, 0, 0.05),
+    -4px 0px 4px rgba(0, 0, 0, 0.05), -8px 0px 8px rgba(0, 0, 0, 0.05),
+    -16px 0px 16px rgba(0, 0, 0, 0.05) !important;
+  z-index: 50;
+  border-left: 0.5px solid #888;
 }
