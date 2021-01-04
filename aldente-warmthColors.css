@@ -2,6 +2,8 @@
 /* https://github.com/chad-bennett/al-dente-obsidian-theme */
 /* by chad bennett | chad.bennett@live.com */
 
+/* need to update and streamline colors so there are fewer of them being used/implemented */
+
 :root {
   --color-dark: #3f3e3c;
   --color-light: #f6f6f4;
@@ -86,6 +88,10 @@
 /* antialiasing for non-retina */
 * {
   -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* fix top titlebar */
@@ -1220,7 +1226,7 @@ span.cm-formatting-list-ul:before {
   border-right: 0.5px solid #888;
 }
 .workspace-leaf-resize-handle {
-  border-right: 0px solid var(--color-off);
+  border-right: 2px solid transparent;
 }
 
 .app-container.is-right-sidedock-collapsed .workspace-split.mod-right-split {
@@ -1238,10 +1244,15 @@ span.cm-formatting-list-ul:before {
   > .workspace-leaf-content
   > .view-header {
   border-left: 0px solid transparent;
+  border-right: 1px solid var(--color-front);
+  border-left: 1px solid var(--color-front);
+  border-top: none;
+  border-bottom: none;
+  background: var(--color-back);
 }
 
 body.plugin-sliding-panes .view-header-title,
 .workspace-leaf.mod-active .view-header-title,
 .workspace-leaf.mod-active .view-header-icon {
-  background: var(--color-back);
+
 }
