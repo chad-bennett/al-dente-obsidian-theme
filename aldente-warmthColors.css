@@ -13,6 +13,9 @@
   --color-blue: #117a8b;
   --color-blue-light: #17a2b8;
   --color-blue-lightest: #8bd1dc;
+  --color-purple: #886b97;
+  --color-purple-light: #b19fb6;
+  --color-purple-lightest: #e1d6e2;
   --color-green: #92a85b;
   --color-green-light: #b0c57a;
   --color-green-lightest: #ccdba4;
@@ -55,11 +58,11 @@
   --text-accent-hover: var(--color-blue-accent);
   --text-accent: var(--color-accent);
   --text-faint: var(--color-gray-light);
-  --text-highlight-bg: var(--color-yellow-lightest);
+  --text-highlight-bg: var(--color-purple-lightest);
   --text-nav-selected: var(--color-dark);
   --text-nav: var(--color-dark);
   --text-normal: var(--color-dark);
-  --text-selection: var(--color-yellow-lightest);
+  --text-selection: var(--color-purple-lightest);
 }
 
 /* add warmth colors */
@@ -350,10 +353,13 @@ body {
 .side-dock-ribbon-action:hover,
 .view-header-icon:hover,
 .nav-action-button:hover,
-.nav-action-button.is-active,
 .view-action:hover,
 .view-action.is-active {
   color: var(--color-blue);
+}
+
+.nav-action-button.is-active {
+  color: var(--color-light);
 }
 
 /* Background and text color of selected item in left nav tree */
