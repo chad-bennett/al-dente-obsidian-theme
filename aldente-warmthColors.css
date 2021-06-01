@@ -16,9 +16,9 @@
   --color-purple: #886b97;
   --color-purple-light: #b19fb6;
   --color-purple-lightest: #e1d6e2;
-  --color-green: #92a85b;
-  --color-green-light: #b0c57a;
-  --color-green-lightest: #ccdba4;
+  --color-green: #adbb63;
+  --color-green-light: #c4cd8e;
+  --color-green-lightest: #d4dbad;
   --color-red: #d62c1a;
   --color-red-light: #e74c3c;
   --color-red-lightest: #f3a69e;
@@ -30,7 +30,7 @@
   --color-accent: #e9573f;
   --color-accent-faded: #fc6e51;
   --shadow: 1px 1px 2px #88888888;
-  --font-family-editor: prologue, gotham, metropolis, manrope, inter, poppins,
+  --font-family-editor: 'nunito sans', gotham, metropolis, prologue, manrope, inter, poppins,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Microsoft YaHei Light", sans-serif;
@@ -40,6 +40,10 @@
 }
 
 .theme-light {
+  --color-accent: var(--color-green);
+  --color-accent-faded: var(--color-green-light);
+  --color-blue-accent: var(--color-blue);
+  --color-blue-accent-faded: var(--color-blue-lightest);
   --color-front: var(--color-dark);
   --color-back: var(--color-light);
   --color-off: var(--color-gray-light);
@@ -49,8 +53,8 @@
   --background-primary: var(--color-light);
   --background-secondary-alt: var(--color-light);
   --background-secondary: var(--color-light);
-  --code-block-background: #fff;
   --code-block-border: var(--color-gray-light);
+  --code-block-background: #fff;
   --interactive-accent-hover: var(--color-accent);
   --interactive-accent-rgb: var(--color-accent);
   --interactive-accent: var(--color-accent);
@@ -58,19 +62,11 @@
   --text-accent-hover: var(--color-blue-accent);
   --text-accent: var(--color-accent);
   --text-faint: var(--color-gray-light);
-  --text-highlight-bg: var(--color-purple-lightest);
+  --text-highlight-bg: var(--color-green-lightest);
   --text-nav-selected: var(--color-dark);
   --text-nav: var(--color-dark);
   --text-normal: var(--color-dark);
   --text-selection: var(--color-purple-lightest);
-}
-
-/* add warmth colors */
-.theme-light {
-  --color-accent: var(--color-green);
-  --color-accent-faded: var(--color-green-light);
-  --color-blue-accent: var(--color-blue);
-  --color-blue-accent-faded: var(--color-blue-lightest);
 }
 
 /* new dark theme */
@@ -101,6 +97,7 @@
   --text-normal: var(--color-light);
   --text-selection: #9a71aa38;
 }
+
 /* antialiasing for non-retina */
 * {
   -webkit-font-smoothing: subpixel-antialiased !important;
@@ -108,6 +105,9 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: var(--font-family-editor) !important;
 }
 
 /* fix top titlebar */
@@ -115,21 +115,58 @@ html {
   z-index: 1000;
 }
 
-/* use some other fonts for the body, too */
 body {
   font-family: var(--font-family-editor);
-  font-size: 16px;
-  line-height: 1.6rem;
   font-weight: 400;
-  background-image: radial-gradient(
-      circle at 12.17% 41.13%,
+  background-image: radial-gradient(circle at 12.17% 41.13%,
       #f7f6f0,
-      transparent 100%
-    ),
+      transparent 100%),
     radial-gradient(circle at 88.72% 61.69%, #ebe6de, transparent 100%),
     radial-gradient(circle at 50% 50%, #e1e0da, #e9e8e6 100%);
   background-attachment: fixed;
   background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-weight: 800;
+  line-height: 1.3;
+  font-family: var(--font-family-title);
+}
+
+.cm-header-1,
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+.cm-header-2,
+h2 {
+  font-size: 2.441rem;
+}
+
+.cm-header-3,
+h3 {
+  font-size: 1.953rem;
+}
+
+.cm-header-4,
+h4 {
+  font-size: 1.563rem;
+}
+
+.cm-header-5,
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
 }
 
 /* here's the hack to hide unnecessary top borders */
@@ -141,6 +178,11 @@ body {
 /* Obsidian UI colors */
 .checkbox-container {
   background-color: var(--color-off);
+}
+
+/* default button color */
+button {
+  background-color: var(--color-gray-lightest-fade);
 }
 
 /* the sometimes appearing very thin scrollbar */
@@ -240,7 +282,7 @@ body {
 }
 
 /* style the nav folder title */
-.mod-root > .nav-folder-title {
+.mod-root>.nav-folder-title {
   padding: 10px 0;
 }
 
@@ -291,8 +333,8 @@ body {
 }
 
 /* Just above the folder tree, the name of the vault */
-.nav-folder.mod-root > .nav-file-title,
-.nav-folder.mod-root > .nav-folder-title {
+.nav-folder.mod-root>.nav-file-title,
+.nav-folder.mod-root>.nav-folder-title {
   color: var(--text-nav);
 }
 
@@ -363,24 +405,24 @@ body {
 }
 
 /* Background and text color of selected item in left nav tree */
-.nav-file.is-active > .nav-file-title,
-.nav-file.is-active > .nav-folder-title,
-.nav-file.is-active > .nav-folder-collapse-indicator,
-.nav-folder.is-active > .nav-file-title,
-.nav-folder.is-active > .nav-folder-title,
-.nav-folder.is-active > .nav-folder-collapse-indicator {
+.nav-file.is-active>.nav-file-title,
+.nav-file.is-active>.nav-folder-title,
+.nav-file.is-active>.nav-folder-collapse-indicator,
+.nav-folder.is-active>.nav-file-title,
+.nav-folder.is-active>.nav-folder-title,
+.nav-folder.is-active>.nav-folder-collapse-indicator {
   background-color: var(--color-accent-faded);
   color: var(--color-dark);
   border-radius: 4px;
 }
 
 /* Background and text color of selected item in left nav tree - when hovering */
-.nav-file.is-active > .nav-file-title:hover,
-.nav-file.is-active > .nav-folder-title:hover,
-.nav-file.is-active > .nav-folder-collapse-indicator:hover,
-.nav-folder.is-active > .nav-file-title:hover,
-.nav-folder.is-active > .nav-folder-title:hover,
-.nav-folder.is-active > .nav-folder-collapse-indicator:hover {
+.nav-file.is-active>.nav-file-title:hover,
+.nav-file.is-active>.nav-folder-title:hover,
+.nav-file.is-active>.nav-folder-collapse-indicator:hover,
+.nav-folder.is-active>.nav-file-title:hover,
+.nav-folder.is-active>.nav-folder-title:hover,
+.nav-folder.is-active>.nav-folder-collapse-indicator:hover {
   background-color: var(--color-accent);
   color: var(--color-light);
 }
@@ -548,6 +590,12 @@ div.markdown-preview-view {
   margin-top: 0;
 }
 
+/* remove line spacing on list items*/
+.markdown-preview-view ul p,
+.markdown-preview-view ol p {
+  margin-bottom: 0;
+}
+
 /* title font styling */
 .markdown-preview-view h1,
 .markdown-preview-view h2,
@@ -684,8 +732,7 @@ div.markdown-preview-view {
 }
 
 .cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian
-  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
 .cm-s-obsidian pre.HyperMD-codeblock {
   background-color: var(--code-block-background);
   color: var(--color-red);
@@ -749,6 +796,7 @@ div.markdown-preview-view {
   text-align: left;
   hyphens: auto;
 }
+
 /* search box tweaks */
 input[type="text"] {
   border: 0 solid var(--background-modifier-border);
@@ -835,7 +883,7 @@ input[type="text"] {
 
 /* workspace leafs and splits */
 .workspace-split.mod-root .workspace-split.mod-vertical .workspace-leaf-content,
-.workspace-split.mod-vertical > .workspace-split,
+.workspace-split.mod-vertical>.workspace-split,
 .workspace-leaf {
   padding-right: 0 !important;
 }
@@ -880,19 +928,13 @@ input[type="text"] {
 
 /* workspace headers */
 .workspace-tab-header-container,
-.workspace-split.mod-root
-  > .workspace-leaf:first-of-type:last-of-type
-  .view-header,
-.workspace-split.mod-root
-  > .workspace-leaf:first-of-type:last-of-type.mod-active
-  .view-header-title-container:after {
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type .view-header,
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
   border-bottom: 1px solid var(--color-off);
   height: 2.25em;
 }
 
-.workspace-split.mod-root
-  > .workspace-leaf:first-of-type:last-of-type.mod-active
-  .view-header-title-container:after {
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
   height: calc(2.25em - 2px);
   border-color: var(--color-off);
 }
@@ -1000,7 +1042,7 @@ a {
 /* tag styling*/
 a.tag {
   color: var(--color-dark) !important;
-  background: var(--color-accent-faded) !important;
+  background: var(--color-blue-lightest) !important;
   font-size: 1rem;
   border-radius: 0.4rem;
   padding: 0.2rem;
@@ -1011,8 +1053,8 @@ a.tag {
 }
 
 a.tag:hover {
-  color: var(--color-light) !important;
-  background: var(--color-accent) !important;
+  background: var(--color-blue-light) !important;
+  color: var(--color-light);
   box-shadow: var(--shadow);
   transform: scale(1.1);
 }
@@ -1058,7 +1100,7 @@ a.tag:hover {
   box-shadow: var(--shadow);
 }
 
-blockquote p > br {
+blockquote p>br {
   content: " " !important;
   display: block !important;
   margin-bottom: 1rem !important;
@@ -1076,6 +1118,7 @@ blockquote p > br {
   border-radius: 0.3rem;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  background-color: #f2e6d1;
 }
 
 /* better checkboxes */
@@ -1116,8 +1159,8 @@ input[type="checkbox"]:checked {
 }
 
 /* bolder folder title on left sidebar */
-.nav-folder.mod-root > .nav-file-title,
-.nav-folder.mod-root > .nav-folder-title {
+.nav-folder.mod-root>.nav-file-title,
+.nav-folder.mod-root>.nav-folder-title {
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -1157,10 +1200,13 @@ input[type="checkbox"]:checked {
 .popover.hover-popover {
   background-color: var(--code-block-background);
   border-radius: 1rem;
-  transform: scale(0.8); /* makes the content smaller */
-  max-height: 600px; /* was 300 */
+  transform: scale(0.8);
+  /* makes the content smaller */
+  max-height: 600px;
+  /* was 300 */
   min-height: 100px;
-  width: 500px; /* was 400 */
+  width: 500px;
+  /* was 400 */
   box-shadow: var(--shadow);
   padding: 1rem;
 }
@@ -1198,11 +1244,11 @@ input[type="checkbox"]:checked {
 
 /* turn --- to full line in editor */
 
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr {
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hr {
   color: transparent;
 }
 
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr:after {
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hr:after {
   content: "";
   position: absolute;
   height: 1px;
@@ -1236,11 +1282,12 @@ span.cm-formatting-list-ul:before {
 }
 
 /* andy mode sliding panels tweaks and side panel shadows */
-.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+.plugin-sliding-panes-stacking .workspace>.mod-root>.workspace-leaf {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2),
     0px 0px 4px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.2),
     0px 0px 16px rgba(0, 0, 0, 0.2) !important;
 }
+
 .app-container.is-left-sidedock-collapsed .workspace-split.mod-left-split {
   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.05), 2px 0px 2px rgba(0, 0, 0, 0.05),
     4px 0px 4px rgba(0, 0, 0, 0.05), 8px 0px 8px rgba(0, 0, 0, 0.05),
@@ -1248,6 +1295,7 @@ span.cm-formatting-list-ul:before {
   z-index: 50;
   border-right: 0.5px solid #888;
 }
+
 .workspace-leaf-resize-handle {
   border-right: 2px solid transparent;
 }
@@ -1260,12 +1308,7 @@ span.cm-formatting-list-ul:before {
   border-left: 0.5px solid #888;
 }
 
-.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  > .workspace-leaf
-  > .workspace-leaf-content
-  > .view-header {
+.plugin-sliding-panes-rotate-header .workspace>.mod-root>.workspace-leaf>.workspace-leaf-content>.view-header {
   border-left: 0px solid transparent;
   border-right: 1px solid var(--color-front);
   border-left: 1px solid var(--color-front);
@@ -1276,5 +1319,77 @@ span.cm-formatting-list-ul:before {
 
 body.plugin-sliding-panes .view-header-title,
 .workspace-leaf.mod-active .view-header-title,
-.workspace-leaf.mod-active .view-header-icon {
+.workspace-leaf.mod-active .view-header-icon {}
+
+.iframeDiv {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-bottom: 1.5em;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Scrollbar */
+/* change width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* no rounded corners - Obsdn-dark-RMX */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  -webkit-border-radius: 4px;
+}
+
+/* Delay popover */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.popover {
+  animation: fadeIn 1.5s;
+}
+
+/* tweak kanban settings */
+.kanban-plugin__lane-title {
+  font-size: 1.5rem;
+  font-family: var(--font-title);
+}
+
+.kanban-plugin__item-content-wrapper {
+  background-color: var(--code-block-background);
+}
+
+.kanban-plugin__item-title p {
+  font-size: 1rem;
+}
+
+/* extras that need to relocate in the code above */
+
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: #f2e6d1;
 }
