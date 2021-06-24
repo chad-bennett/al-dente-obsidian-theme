@@ -30,7 +30,7 @@
   --color-accent: #e9573f;
   --color-accent-faded: #fc6e51;
   --shadow: 1px 1px 2px #88888888;
-  --font-family-editor: 'nunito sans', gotham, metropolis, prologue, manrope, inter, poppins,
+  --font-family-editor: 'airbnb cereal app', 'nunito sans', gotham, metropolis, prologue, manrope, inter, poppins,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Microsoft YaHei Light", sans-serif;
@@ -1169,7 +1169,6 @@ input[type="checkbox"]:checked {
 }
 
 /* table formatting */
-
 .markdown-preview-view table {
   background: var(--color-light);
   margin: 2rem auto;
@@ -1177,19 +1176,25 @@ input[type="checkbox"]:checked {
   max-width: 100%;
 }
 
+
 .markdown-preview-view th,
 .markdown-preview-view td {
   padding: 0.8rem 1.2rem;
-  border: 1px solid var(--color-dark);
+  border: .5px solid var(--color-dark);
 }
 
 .markdown-preview-view th {
-  background: var(--color-gray-light);
+  background: var(--color-gray-lightest-fade);
   text-align: left;
 }
 
 .markdown-preview-view tr:nth-child(even) {
-  background-color: var(--color-gray-light);
+  background-color: var(--color-gray-lightest-fade);
+}
+
+/* links in table blue */
+.markdown-preview-view table a {
+  color: var(--color-blue) !important;
 }
 
 /* _hyphenation_and_justification     
@@ -1324,6 +1329,7 @@ body.plugin-sliding-panes .view-header-title,
 .workspace-leaf.mod-active .view-header-title,
 .workspace-leaf.mod-active .view-header-icon {}
 
+/* iframe center and responsive */
 .iframeDiv {
   position: relative;
   overflow: hidden;
@@ -1331,7 +1337,7 @@ body.plugin-sliding-panes .view-header-title,
   margin-bottom: 1.5em;
 }
 
-iframe {
+.iframeDiv iframe {
   position: absolute;
   top: 0;
   left: 0;
