@@ -2,6 +2,12 @@
 
 a simple minimal theme for [the obsidian notes app](https://obsidian.md/) that is tender, but firm. it is built to be _just right_ for me. hopefully it is just right for others as well. 
 
+**no longer maintained**: i love that there are people who like using this theme. i don't have the time or energy to maintain it or even go back and fix things for new updates to obsidian. 
+
+i'm going to remove this theme from the community themes hub as soon as i figure out how. i'll leave it up here on github for whoever wants to play around with it. have fun, make it your own, do what you want with it. if you make something cool out of it and want to share, please let me know. 
+
+---
+---
 ---
 
 ## theme variation update 2020.01.03
